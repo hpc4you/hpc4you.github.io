@@ -84,7 +84,9 @@ Copy and paste the green line, then press the Enter key, and wait ...
 
 All servers will automatically reboot at least twice, and then the slurm scheduling cluster is readly for you. 
 
-In particular, the restart operation of all compute nodes will take about 1 minute after the master node. Nothing else to do, just wait. 
+In particular, the restart operation of all compute nodes will be 1 minute lag behind the master node. 
+
+Nothing else to do, just wait. 
 
 ## User Admin
 ### Add user to the cluster
@@ -99,7 +101,8 @@ useradd_hpc chem tom
 ```
 this will add user **tom** to the group **chem**. 
 
-Caution, you will be prompted to set a password for the new user. You will need to enter the password twice. But the screen does not show any asterisks. 
+Caution, you will be prompted to set a password for the new user. You will need to enter the password twice. 
+But the screen does not show any asterisks. 
 
 If you have slurm accounting enabled, you should also run, 
 ```
@@ -131,7 +134,7 @@ reboot_hpc
 Power on the master node and all switches first, and then power on all computing nodes. 
 
 ### Add new computhing node
-1. Clone the OS disk of any compute node. Use this hardware tool, https://item.jd.com/100014988528.html. 
+1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
 2. Boot the new server with the cloned OS disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
 4. On the master/login node, run `setup_hpc ‐‐sync_file /etc/hosts`
@@ -145,3 +148,8 @@ Power on the master node and all switches first, and then power on all computing
 2. On login/master node, run `passwd` to change the root password, then run `setup_hpc --sync_user`. 
 3. Disable password login for root user, only key authentication is allowed.
 4. Or use ssh ProxyJump server or even hardware firewall. 
+
+## Terminology
+In the field of HPC, or parallel computing cluster, a server is called as node. 
+
+Generally, the login server is called as the master node. All the computing nodes are called as slave node. 
