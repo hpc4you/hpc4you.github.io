@@ -133,7 +133,7 @@ reboot_hpc
 ### Poweron the cluster
 Power on the master node and all switches first, and then power on all computing nodes. 
 
-### Add new computhing node
+### Add new computing node
 1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
 2. Boot the new server with the cloned OS disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
