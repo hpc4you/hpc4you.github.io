@@ -1,9 +1,12 @@
 ## hpc4you_toolkit
-The _hpc4you toolkit_ is a simple but robust toolkit to setup a parallel computing cluster with slurm as workload manager by copy and paste. 
+The _hpc4you toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
+
+No computer skills or IT technologies are needed. Only copy and paste.
 
 Currently, the _hpc4you_toolkit_ supports: 
 1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x.
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
+3. The maximum number of computing nodes depends on the capacity of your switch.
 
 ## Quick Start
 Only run `source code`. 
@@ -26,7 +29,7 @@ bash <(curl -k -Ss https://raw.githubusercontent.com/hpc4you/hpc/main/getInfo.sh
 ```
 Follow the on-screen prompts carefully. 
 
-Remeber to copy and paste the blue lines into the body of you mail, also attach the **XXX.dat** file with the Email.
+Remeber to copy and paste the **blue lines** into the body of your Email, please also attach the **XXX.dat** file with the Email.
 
 ## Declare Servers
 On the login node, edit file **/etc/hosts**.  
@@ -62,6 +65,7 @@ In this example,
 1. **server0** is the output of `hostname` on the login node. 
 2. **server12**, is the output of `hostname` on the computing node which can be accessed via IP 192.168.1.112. 
 3. The hostname of all compute nodes must be prefixed with **node**, and the the suffix numbers ('0', '1', '2', and '12' in current case) do not have to be consecutive. 
+4. You can use `nmtui` to set hostname and configure the IP address. 
 
 ## Run hpc4you_toolkit
 Put the file **code** and the package **hpc4you_toolkit-XXX.tgz** into the same folder on the login node. 
@@ -92,6 +96,11 @@ All servers will automatically reboot at least twice, and then the slurm schedul
 In particular, the restart operation of all compute nodes will be 1 minute lag behind the master node. 
 
 Nothing else to do, just wait. 
+
+By default, the **/opt** and **/home** from the master/login node are shared among all slave nodes. 
+It is possible to add new share path by, 
+1. Edit **/etc/exports** file on master/login node, 
+2. Use 'setup_hpc --sync_do' to update the **/etc/fstab** file on all slave nodes. 
 
 ## User Admin
 ### Add user to the cluster
