@@ -1,5 +1,4 @@
 ## hpc4you_toolkit
-
 The _hpc4you toolkit_ is a simple but robust toolkit to setup a parallel computing cluster with slurm as workload manager by only run copy and paste. 
 
 Currently, the _hpc4you_toolkit_ supports: 
@@ -72,14 +71,12 @@ All servers will automatically reboot at least twice, and then the slurm schedul
 
 In particular, the restart operation of all compute nodes will take about 1 minute after the master node. You do not need to do anything, just wait. 
 
-### Post Configuration
-#### Change root password
+### Change root password
 1. Disable internet connection on all slave/computing nodes. 
 2. On login/master node, run `passwd` to change the root password. 
 
-#### User Admin
-##### Add user to this cluster
-
+### User Admin
+#### Add user to this cluster
 On login node, run 
 ```
 useradd_hpc tom
@@ -99,29 +96,29 @@ sacctmgr add user tom Account=hpc4you
 ```
 in which, you will give user **tom** the default account **hpc4you**. Refer slurm manual for more details. 
 
-##### Delete user from this cluster
+#### Delete user from this cluster
 On the login/master node, run, 
 ```
 userdel_hpc tom
 ````
 in this case, user **tom** is to be deleted. 
 
-##### Poweroff the cluster
+### Poweroff the cluster
 On the login/master node, run, 
 ```
 poweroff_hpc
 ````
 
-##### Reboot the cluster
+### Reboot the cluster
 On the login/master node, run, 
 ```
 reboot_hpc
 ````
 
-##### Power on the cluster
+### Poweron the cluster
 Power on the master node and all switches first, and then power on all computing nodes. 
 
-##### Add new computhing node
+### Add new computhing node
 1. Clone any of the current compute node OS disks
 2. Boot the new server with the cloned OS disk, edite hostname, configre network. 
 3. Add the IP and hostname of the new server to /etc/hosts on the master/login node. 
