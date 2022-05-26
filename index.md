@@ -1,15 +1,16 @@
 ## hpc4you_toolkit
 The _hpc4you toolkit_ is a simple but robust toolkit to setup a parallel computing cluster with slurm as workload manager by copy and paste. 
 
+Currently, the _hpc4you_toolkit_ supports: 
+1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x.
+2. Ubuntu 20.04/22.04 and their compatible operating systems. 
+
+## Quick Start
 Only run, 
 ```
 source code
 ```
 All subsequent 5 commands will be automatically displayed in green. All you need to do is to copy and paste the green text according to the on-screen instructions. 
-
-Currently, the _hpc4you_toolkit_ supports: 
-1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x.
-2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 
 ## Prerequisites
 1. All servers running the same version of Linux. 
@@ -155,10 +156,33 @@ Power on the master node and all switches first, and then power on all computing
 3. Disable password login for root user, only key authentication is allowed.
 4. Or use ssh ProxyJump server or even hardware firewall. 
 
-## Terminology
-In the field of HPC, or parallel computing cluster, a server is called as node. 
-
-Generally, the login server is called as the master node. All the computing nodes are called as slave node. 
-
 ## hpc4you_toolkit solo
 _hpc4you_toolkit solo_, is also available, which can deploy slurm to workstations by only run `source code`. 
+
+## Usage of setup_hpc
+### sync file
+On the login/master node, run
+```
+setup_hpc --sync_file /full/path/to/file
+```
+For example, `setup_hpc --sync_file /etc/hosts` will sync the hosts file on master node to all slave nodes. 
+
+### run cmd on all slave nodes
+On the login/master node, run
+```
+setup_hpc --sync_do cmd
+```
+For example, 
+1. `setup_hpc --sync_do uptime`, will print the uptime info for all slave nodes. 
+2. `setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'`, will restart slurm client and sync time on all slave nodes. 
+
+## Video Demo
+1. How to add new IP and hostname informations into file **/etc/hosts**? 🔗[bv19A4y1U7uX](https://www.bilibili.com/video/bv19A4y1U7uX)
+2. How to upload file(s) to remote Linux server? 🔗[BV1fJ411n7uV](https://www.bilibili.com/video/BV1fJ411n7uV)
+3. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV)
+4. Deploy SLURM by only run `source code`, demonstration of **hpc4you_toolkit solo** 🔗[BV1Gg411R7tt](https://www.bilibili.com/video/BV1Gg411R7tt)
+
+## Terminology
+In the field of parallel computing clusters, we refer to a server as a node. 
+
+Usually, in small-scale clusters, the login server, storage node, and the contollor server can be merged into a single server, which is called as the login/master node. Accordingly, we refer to all compute nodes, as the slave nodes. 
