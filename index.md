@@ -119,10 +119,11 @@ reboot_hpc
 Power on the master node and all switches first, and then power on all computing nodes. 
 
 ### Add new computhing node
-1. Clone any of the current compute node OS disks
-2. Boot the new server with the cloned OS disk, edite hostname, configre network. 
-3. Add the IP and hostname of the new server to /etc/hosts on the master/login node. 
+1. Clone OS disk of any compute node. Use this hardware tool, https://item.jd.com/100014988528.html. 
+2. Boot the new server with the cloned OS disk, modify hostname and configure network with command `nmtui`. 
+3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
 4. On the master/login node, run `setup_hpc ‐‐sync_file /etc/hosts`
 5. On the new server, run `slurmd ‐C | head -n 1`, please copy the output contents. 
-6. On the master/login node, paste the coppied contents into last line of file /etc/slurm/slurm.conf. 
+6. On the master/login node, paste the coppied contents into last line of file **/etc/slurm/slurm.conf**. 
 7. On the master/login node, run `setup_hpc ‐‐sync_do 'systemctl restart slurmd'; systemctl restart slurmctld`. 
+8. All Done. 
