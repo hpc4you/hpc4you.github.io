@@ -153,3 +153,6 @@ Power on the master node and all switches first, and then power on all computing
 In the field of HPC, or parallel computing cluster, a server is called as node. 
 
 Generally, the login server is called as the master node. All the computing nodes are called as slave node. 
+
+## hpc4you_toolkit solo
+_hpc4you_toolkit solo_, is also available, which can deploy slurm to workstations by only run `source code`. 
