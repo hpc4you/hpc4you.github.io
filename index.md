@@ -6,10 +6,8 @@ Currently, the _hpc4you_toolkit_ supports:
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 
 ## Quick Start
-Only run, 
-```
-source code
-```
+Only run `source code`. 
+
 All subsequent 5 commands will be automatically displayed in green. All you need to do is to copy and paste the green text according to the on-screen instructions. 
 
 ## Prerequisites
