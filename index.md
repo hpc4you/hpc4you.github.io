@@ -1,13 +1,19 @@
 ## hpc4you_toolkit
-The _hpc4you toolkit_ is a simple but robust toolkit to setup a parallel computing cluster with slurm as workload manager by only run copy and paste. 
+The _hpc4you toolkit_ is a simple but robust toolkit to setup a parallel computing cluster with slurm as workload manager by copy and paste. 
+
+Only run, 
+```
+source code
+```
+All subsequent 5 commands will be automatically displayed in green. All you need to do is to copy and paste the green text according to the on-screen instructions. 
 
 Currently, the _hpc4you_toolkit_ supports: 
 1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x.
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 
 ## Prerequisites
-1. All servers running the same version of Linux, 
-2. All servers are interconnected through a LAN, 1000 Mbps, or 10 Gbps ethernets, or may be InfiniBand. 
+1. All servers running the same version of Linux. 
+2. All servers are interconnected through a LAN, 1000 Mbps, or 10 Gbps ethernet, or may be InfiniBand. 
 3. The yum/dnf/apt is working on all servers. 
 4. All servers have a unique hostname. 
 5. All servers share the same root password. 
