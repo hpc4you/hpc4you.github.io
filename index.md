@@ -1,4 +1,4 @@
-## hpc4you_toolkit
+## About
 The _hpc4you toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
 
 No computer skills or IT technologies are needed. Only copy and paste.
@@ -190,8 +190,8 @@ On the login/master node, run
 setup_hpc --sync_do cmd
 ```
 For example, 
-1. `setup_hpc --sync_do uptime`, will print the uptime info for all slave nodes. 
-2. `setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'`, will restart slurm client and sync time on all slave nodes. 
+- `setup_hpc --sync_do uptime`, will print the uptime info for all slave nodes. 
+- `setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'`, will restart slurm client and sync time on all slave nodes. 
 
 ## Video Demo
 1. How to add new IP and hostname informations into file **/etc/hosts**? 🔗[bv19A4y1U7uX](https://www.bilibili.com/video/bv19A4y1U7uX)
