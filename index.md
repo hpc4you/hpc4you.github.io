@@ -1,4 +1,4 @@
-## About
+## hpc4you_toolkit
 The _hpc4you toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
 
 No computer skills or IT technologies are needed. Only copy and paste.
