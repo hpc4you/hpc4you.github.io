@@ -31,7 +31,7 @@ Follow the on-screen prompts carefully.
 
 Remeber to copy and paste the **blue lines** into the body of your Email, please also attach the **XXX.dat** file with the Email.
 
-## Supported Cluster Architectures
+## Cluster Architectures
 ### High-Performance Cluster
 ![High-Performance Cluster](/docs/multi-node-HPC.jpg)
 
@@ -112,8 +112,8 @@ It is possible to add new share path by,
 1. Edit **/etc/exports** file on master/login node, 
 2. Use 'setup_hpc --sync_do' to update the **/etc/fstab** file on all slave nodes. 
 
-## User Admin
-### Add user to the cluster
+## User Management
+### Add user
 On login node, run 
 ```
 useradd_hpc tom
@@ -134,7 +134,7 @@ sacctmgr add user tom Account=hpc4you
 ```
 in which, you will give user **tom** the default account **hpc4you**. Refer slurm manual for more details. 
 
-### Delete user from the cluster
+### Delete user
 On the login/master node, run, 
 ```
 userdel_hpc tom
@@ -142,22 +142,22 @@ userdel_hpc tom
 in this case, user **tom** is to be deleted. 
 
 ## Cluster Management
-### Poweroff the cluster
+### Poweroff
 On the login/master node, run, 
 ```
 poweroff_hpc
 ````
 
-### Reboot the cluster
+### Reboot
 On the login/master node, run, 
 ```
 reboot_hpc
 ````
 
-### Poweron the cluster
+### Poweron
 Power on the master node and all switches first, and then power on all computing nodes. 
 
-### Add new computing node
+### Add new node
 1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
 2. Boot the new server with the cloned OS disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
@@ -184,20 +184,58 @@ setup_hpc --sync_file /full/path/to/file
 ```
 For example, `setup_hpc --sync_file /etc/hosts` will sync the hosts file on master node to all slave nodes. 
 
-### run cmd on all slave nodes
+### run cmd
 On the login/master node, run
 ```
 setup_hpc --sync_do cmd
 ```
 For example, 
-- `setup_hpc --sync_do uptime`, will print the uptime info for all slave nodes. 
-- `setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'`, will restart slurm client and sync time on all slave nodes. 
+```
+setup_hpc --sync_do uptime
+```
+will print the uptime info for all slave nodes. 
+
+```
+setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'
+```
+will restart slurm client and sync time on all slave nodes. 
+
+## Pricing 
+The nice tool deserves the price tag. 
+
+### *hpc4you_toolkit* features 
+FEATURES | Basic | Adv | Pro
+--- | --- | --- | ---
+CPU Scheduling  | ✅ | ✅ | ✅ 
+GPU Scheduling[^1]  | ✅   | ✅ | ✅
+Job Log         | ❌ | ✅ | ✅
+Deny access to the slave node[^2] | ❌  | ❌ | ✅
+Monitoring Historical         | ❌   | ❌ | ✅
+Monitoring Realtime           | ❌   | ❌ | ✅
+Pricing | 399 USD | Email ask@hpc4you.top | Email ask@hpc4you.top
+
+### *hpc4you_toolkit solo* features
+FEATURES | Basic | Adv 
+--- | --- | --- 
+CPU Scheduling  | ✅   | ✅ 
+GPU Scheduling[^1]  | ✅   | ✅ 
+Job Log         | ❌   | ✅
+Pricing | 99 USD | 149 USD 
+
+[^1]: SLURM natively supports GPU scheduling. However, the auto-detection mode often fails and needs to be configured manually once. If you can't do it, I can be a helping hand, but please pay the fee. 
+[^2]: To prevent users from sshing into nodes that they do not have a running job on, and to track the ssh connection and any other spawned processes for accounting and to ensure complete job cleanup when the job is completed. [More info](https://slurm.schedmd.com/pam_slurm_adopt.html) 
+
+### Discount 
+1. A huge discount of up to 75% is available if you choose the self-service mode.
+2. The **self-service mode** refers to 'Read the manual, watch the video tutorials, and do it all by yourself. No support is available'.  
 
 ## Video Demo
 1. How to add new IP and hostname informations into file **/etc/hosts**? 🔗[bv19A4y1U7uX](https://www.bilibili.com/video/bv19A4y1U7uX)
 2. How to upload file(s) to remote Linux server? 🔗[BV1fJ411n7uV](https://www.bilibili.com/video/BV1fJ411n7uV)
 3. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV)
 4. Deploy SLURM by only run `source code`, demonstration of **hpc4you_toolkit solo** 🔗[BV1Gg411R7tt](https://www.bilibili.com/video/BV1Gg411R7tt)
+5. Change hostname 🔗[BV1yP4y1M77H](https://www.bilibili.com/video/BV1yP4y1M77H)
+6. Configure network 🔗[BV1gP4y1u7Aw](https://www.bilibili.com/video/BV1gP4y1u7Aw)
 
 ## Terminology
 In the field of parallel computing clusters, we refer to a server as a node. 
