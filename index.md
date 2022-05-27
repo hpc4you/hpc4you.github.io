@@ -31,6 +31,16 @@ Follow the on-screen prompts carefully.
 
 Remeber to copy and paste the **blue lines** into the body of your Email, please also attach the **XXX.dat** file with the Email.
 
+## Supported Cluster Architectures
+### High-Performance Cluster
+![High-Performance Cluster](/docs/multi-node-HPC.jpg)
+
+### Intra-node Local-I/O Cluster
+![Intra-node Local-I/O Cluster](/docs/intra-node-local-IO-Cluster.jpg)
+
+### mini-HPC
+![mini-HPC](/docs/mini-HPC.jpg)
+
 ## Declare Servers
 On the login node, edit file **/etc/hosts**.  
 
