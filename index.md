@@ -204,6 +204,7 @@ will restart slurm client and sync time on all slave nodes.
 The nice tool deserves the price tag. 
 
 ### *hpc4you_toolkit* features 
+
 FEATURES | Basic | Adv | Pro
 --- | --- | --- | ---
 CPU Scheduling  | ✅ | ✅ | ✅ 
@@ -214,13 +215,16 @@ Monitoring Historical         | ❌   | ❌ | ✅
 Monitoring Realtime           | ❌   | ❌ | ✅
 Pricing | 399 USD | Email ask@hpc4you.top | Email ask@hpc4you.top
 
+
 ### *hpc4you_toolkit solo* features
+
 FEATURES | Basic | Adv 
 --- | --- | --- 
 CPU Scheduling  | ✅   | ✅ 
 GPU Scheduling[^1]  | ✅   | ✅ 
 Job Log         | ❌   | ✅
 Pricing | 99 USD | 149 USD 
+
 
 [^1]: SLURM natively supports GPU scheduling. However, the auto-detection mode often fails and needs to be configured manually once. If you can't do it, I can be a helping hand, but please pay the fee. 
 [^2]: To prevent users from sshing into nodes that they do not have a running job on, and to track the ssh connection and any other spawned processes for accounting and to ensure complete job cleanup when the job is completed. [More info](https://slurm.schedmd.com/pam_slurm_adopt.html) 
