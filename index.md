@@ -221,7 +221,7 @@ Pricing | 399 USD | Email ask@hpc4you.top | Email ask@hpc4you.top
 FEATURES | Basic | Adv 
 --- | --- | --- 
 CPU Scheduling  | ✅   | ✅ 
-GPU Scheduling[^1]  | ✅   | ✅ 
+GPU Scheduling  | ✅   | ✅ 
 Job Log         | ❌   | ✅
 Pricing | 99 USD | 149 USD 
 
