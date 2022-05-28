@@ -230,8 +230,9 @@ Pricing | 99 USD | 149 USD
 [^2]: To prevent users from sshing into nodes that they do not have a running job on, and to track the ssh connection and any other spawned processes for accounting and to ensure complete job cleanup when the job is completed. [More info](https://slurm.schedmd.com/pam_slurm_adopt.html) 
 
 ### Discount 
-1. A huge discount of up to 75% is available if you choose the self-service mode.
+1. A huge discount of up to **75% OFF** is available if you choose the self-service mode.
 2. The **self-service mode** refers to 'Read the manual, watch the video tutorials, and do it all by yourself. No support is available'.  
+3. 中文用户🔗[点击这里](https://gitee.com/hpc4you/hpc). 
 
 ## Video Demo
 1. How to add new IP and hostname informations into file **/etc/hosts**? 🔗[bv19A4y1U7uX](https://www.bilibili.com/video/bv19A4y1U7uX)
