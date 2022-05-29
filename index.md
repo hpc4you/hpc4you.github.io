@@ -234,13 +234,23 @@ Pricing | 99 USD | 149 USD
 2. The **self-service mode** refers to 'Read the manual, watch the video tutorials, and do it all by yourself. No support is available'.  
 3. 中文用户🔗[点击这里](https://gitee.com/hpc4you/hpc). 
 
-## Video Demo
+## Demo
+### Live Demo
+Real-time demo on how to set up HPC for scientific research with hpc4you_toolkit. Only copy and paste. No computer skills and Linux knowledge are required. 
+1. 🔗[All modules, demo with Ubuntu Jammy](https://youtu.be/2nUUDSdy1Io)
+2. 🔗[All modules, demo with Ubuntu Focal](https://youtu.be/ZRmjWn_sCWk)
+3. 🔗[All modules, demo with CentOS 7.9](https://youtu.be/klaYjBEictk)
+
+### Short Videos
+To those who have no patience to watch real-time videos, 
+1. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV)
+2. Deploy SLURM by only run `source code`, demonstration of **hpc4you_toolkit solo** 🔗[BV1Gg411R7tt](https://www.bilibili.com/video/BV1Gg411R7tt)
+
+## Play with Linux
 1. How to add new IP and hostname informations into file **/etc/hosts**? 🔗[bv19A4y1U7uX](https://www.bilibili.com/video/bv19A4y1U7uX)
 2. How to upload file(s) to remote Linux server? 🔗[BV1fJ411n7uV](https://www.bilibili.com/video/BV1fJ411n7uV)
-3. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV)
-4. Deploy SLURM by only run `source code`, demonstration of **hpc4you_toolkit solo** 🔗[BV1Gg411R7tt](https://www.bilibili.com/video/BV1Gg411R7tt)
-5. Change hostname 🔗[BV1yP4y1M77H](https://www.bilibili.com/video/BV1yP4y1M77H)
-6. Configure network 🔗[BV1gP4y1u7Aw](https://www.bilibili.com/video/BV1gP4y1u7Aw)
+3. Change hostname 🔗[BV1yP4y1M77H](https://www.bilibili.com/video/BV1yP4y1M77H)
+4. Configure network 🔗[BV1gP4y1u7Aw](https://www.bilibili.com/video/BV1gP4y1u7Aw)
 
 ## Terminology
 In the field of parallel computing clusters, we refer to a server as a node. 
