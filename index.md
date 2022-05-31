@@ -236,7 +236,7 @@ Pricing | 99 USD | 149 USD
 Real-time demo on how to set up HPC for scientific research with hpc4you_toolkit. Only copy and paste. No computer skills and Linux knowledge are required. 
 1. All modules, 🔗[live-demo with Ubuntu Jammy](https://youtu.be/2nUUDSdy1Io)
 2. All modules, 🔗[live-demo with Ubuntu Focal](https://youtu.be/ZRmjWn_sCWk)
-3. All modules, 🔗[live-demo with CentOS 7.9](https://youtu.be/klaYjBEictk)
+3. All modules, 🔗[live-demo with CentOS 7.9](https://youtu.be/OhLdV_wd1n4)
 4. All modules, 🔗[live-demo with RockyLinux 8](https://youtu.be/m0AhepMaoJA)
 
 ### Short Videos
