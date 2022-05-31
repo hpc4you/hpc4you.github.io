@@ -1,17 +1,24 @@
 ## hpc4you_toolkit
 The _hpc4you toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
 
-No computer skills or IT technologies are needed. Only copy and paste.
+No computer skills or Linux knowledge are needed. Only **copy and paste the cmd from the screen then press the Enter key**.
+
+If you have some knowledge of how parallel computing clusters work, and how to administrate Linux in the cmd line and configure Linux networking, then you can try out the [OpenHPC solution](https://github.com/openhpc/ohpc). 
 
 Currently, the _hpc4you_toolkit_ supports: 
-1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x.
+1. RHEL7 and RHEL8 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x, AlmaLinux 8.x. 
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 3. The maximum number of computing nodes depends on the capacity of your switch.
 
 ## Quick Start
-Only run `source code`. 
+1. Get the package. 
+2. Edit **/etc/hosts** file. 
+3. Upload the file **code** and the **package**. 
+4. Run `source code`. 
 
-All subsequent 5 commands will be automatically displayed in green. All you need to do is to copy and paste the green text according to the on-screen instructions. 
+All subsequent 5 commands will be automatically displayed in green. 
+
+All you need to do is to copy and paste the green text according to the on-screen instructions. 
 
 ## Prerequisites
 1. All servers running the same version of Linux. 
@@ -101,7 +108,7 @@ Nothing to do but wait ...
 
 Copy and paste the green line, then press the Enter key, and wait ...
 
-All servers will automatically reboot at least twice, and then the slurm scheduling cluster is readly for you. 
+All servers will automatically reboot at least twice, and then the slurm scheduling cluster is ready for you. 
 
 In particular, the restart operation of all compute nodes will be 1 minute lag behind the master node. 
 
@@ -142,26 +149,20 @@ userdel_hpc tom
 in this case, user **tom** is to be deleted. 
 
 ## Cluster Management
-### Poweroff
-On the login/master node, run, 
-```
-poweroff_hpc
-````
+### Power on
+Power on the master node and all switches first, and then power on all computing nodes. 
+
+### Power off
+On the login/master node, run, `poweroff_hpc`.
 
 ### Reboot
-On the login/master node, run, 
-```
-reboot_hpc
-````
-
-### Poweron
-Power on the master node and all switches first, and then power on all computing nodes. 
+On the login/master node, run, `reboot_hpc`.
 
 ### Add new node
 1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
-2. Boot the new server with the cloned OS disk, modify hostname and configure network with command `nmtui`. 
+2. Boot the new server with the cloned disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
-4. On the master/login node, run `setup_hpc ‐‐sync_file /etc/hosts`
+4. On the master/login node, run `setup_hpc ‐‐sync_file /etc/hosts`. 
 5. On the new server, run `slurmd ‐C | head -n 1`, please copy the output. 
 6. On the master/login node, paste the coppied contents into last line of file **/etc/slurm/slurm.conf**. 
 7. On the master/login node, run `setup_hpc ‐‐sync_do 'systemctl restart slurmd'; systemctl restart slurmctld`. 
@@ -172,9 +173,6 @@ Power on the master node and all switches first, and then power on all computing
 2. On login/master node, run `passwd` to change the root password, then run `setup_hpc --sync_user`. 
 3. Disable password login for root user, only key authentication is allowed.
 4. Or use ssh ProxyJump server or even hardware firewall. 
-
-## hpc4you_toolkit solo
-_hpc4you_toolkit solo_, is also available, which can deploy slurm to workstations by only run `source code`. 
 
 ## Usage of setup_hpc
 ### sync file
@@ -200,9 +198,10 @@ setup_hpc --sync_do 'systemctl restart slurmd; utpdate -u 3.cn.pool.ntp.org'
 ```
 will restart slurm client and sync time on all slave nodes. 
 
-## Pricing 
-The nice tool deserves the price tag. 
+## hpc4you_toolkit solo
+_hpc4you_toolkit solo_, is also available, which can deploy slurm to workstations by only run `source code`. 
 
+## Pricing 
 ### *hpc4you_toolkit* features 
 
 FEATURES | Basic | Adv | Pro
@@ -215,7 +214,6 @@ Monitoring Historical         | ❌   | ❌ | ✅
 Monitoring Realtime           | ❌   | ❌ | ✅
 Pricing | 399 USD | Email ask@hpc4you.top | Email ask@hpc4you.top
 
-
 ### *hpc4you_toolkit solo* features
 
 FEATURES | Basic | Adv 
@@ -224,7 +222,6 @@ CPU Scheduling  | ✅   | ✅
 GPU Scheduling  | ✅   | ✅ 
 Job Log         | ❌   | ✅
 Pricing | 99 USD | 149 USD 
-
 
 [^1]: SLURM natively supports GPU scheduling. However, the auto-detection mode often fails and needs to be configured manually once. If you can't do it, I can be a helping hand, but please pay the fee. 
 [^2]: To prevent users from sshing into nodes that they do not have a running job on, and to track the ssh connection and any other spawned processes for accounting and to ensure complete job cleanup when the job is completed. [More info](https://slurm.schedmd.com/pam_slurm_adopt.html) 
