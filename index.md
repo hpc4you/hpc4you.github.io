@@ -102,8 +102,6 @@ you would read on the screen,
 
 Please type the root password, then press the Enter key. 
 
-For the rest of the questions, just press the Enter key. 
-
 Nothing to do but wait ...
 
 Copy and paste the green line, then press the Enter key, and wait ...
@@ -173,6 +171,7 @@ On the login/master node, run, `reboot_hpc`.
 2. On login/master node, run `passwd` to change the root password, then run `setup_hpc --sync_user`. 
 3. Disable password login for root user, only key authentication is allowed.
 4. Or use ssh ProxyJump server or even hardware firewall. 
+5. Or run `enhance_security.sh` to apply awesome security hardening configurations automatically. 
 
 ## Usage of setup_hpc
 ### sync file
