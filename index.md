@@ -1,5 +1,5 @@
 ## hpc4you_toolkit
-The _hpc4you toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
+The _hpc4you_toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
 
 No computer skills or Linux knowledge are needed. Only **copy and paste the cmd from the screen then press the Enter key**.
 
@@ -13,8 +13,8 @@ Currently, the _hpc4you_toolkit_ supports:
 ## Quick Start
 1. Get the package. 
 2. Edit **/etc/hosts** file. 
-3. Upload the file **code** and the **package**. 
-4. Run `source code`. 
+3. Upload the package **hpc4you_toolkit-XXX.zip**. 
+4. Unzip, then run `source code`. 
 
 All subsequent 5 commands will be automatically displayed in green. 
 
@@ -85,9 +85,9 @@ In this example,
 4. You can use `nmtui` to set hostname and configure the IP address. 
 
 ## Run hpc4you_toolkit
-Put the file **code** and the package **hpc4you_toolkit-XXX.tgz** into the same folder on the login node. 
+Upload the package **hpc4you_toolkit-XXX.zip** to the login node. 
 
-Within the above-mentioned folder, open terminal, run: 
+Unzip the package, then open terminal, run: 
 ```
 source code
 ```
@@ -130,10 +130,11 @@ useradd_hpc chem tom
 ```
 this will add user **tom** to the group **chem**. 
 
-Caution, you will be prompted to set a password for the new user. You will need to enter the password twice. 
+Caution: 
+1. You will be prompted to set a password for the new user. You will need to enter the password twice. 
 But the screen does not show any asterisks. 
-
-If you have slurm accounting enabled, you should also run, 
+2. Be sure to copy the private key if you have enabled **enhance_security.sh** module. 
+3. If you have slurm accounting enabled, you should also run, 
 ```
 sacctmgr add user tom Account=hpc4you
 ```
