@@ -1,4 +1,4 @@
 # hpc4you.github.io
-Manual for **hpc4you_toolkit**.
+Manual for **hpc4you_toolkit**, check https://hpc4you.github.io 
 
-For Chinese version, please refer to https://gitee.com/hpc4you/hpc. 
+**hpc4you_toolkit**手册, 请查看 https://gitee.com/hpc4you/hpc
