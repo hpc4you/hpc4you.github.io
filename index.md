@@ -32,7 +32,7 @@ All you need to do is to copy and paste the green text according to the on-scree
 ## Get hpc4you_toolkit
 Choose one machine as the management/master/login node, and run the following code, 
 ```
-bash <(curl -k -Ss https://raw.githubusercontent.com/hpc4you/hpc/main/getInfo.sh)
+curl https://raw.githubusercontent.com/hpc4you/hpc/main/getInfo.sh | bash
 ```
 Follow the on-screen prompts carefully. 
 
