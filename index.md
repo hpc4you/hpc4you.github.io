@@ -20,6 +20,8 @@ All subsequent 5 commands will be automatically displayed in green.
 
 All you need to do is to copy and paste the green text according to the on-screen instructions. 
 
+![demo](build-HPC-with-hpc4you_toolkit-intro.gif)
+
 ## Prerequisites
 1. All servers running the same version of Linux. 
 2. All servers are interconnected through a LAN, 1000 Mbps, or 10 Gbps ethernet, or may be InfiniBand. 
