@@ -22,6 +22,7 @@ All you need to do is to copy and paste the green text according to the on-scree
 
 ![demo](build-HPC-with-hpc4you_toolkit-intro.gif)
 
+
 ## Prerequisites
 1. All servers running the same version of Linux. 
 2. All servers are interconnected through a LAN, 1000 Mbps, or 10 Gbps ethernet, or may be InfiniBand. 
@@ -245,7 +246,7 @@ Real-time demo on how to set up HPC for scientific research with hpc4you_toolkit
 
 ### Short Videos
 To those who have no patience to watch real-time videos, 
-1. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV)
+1. copy+paste+Enter -> cluster ready, demonstration of **hpc4you_toolkit** 🔗[BV1GY411w7ZV](https://www.bilibili.com/video/BV1GY411w7ZV) 🔗[YouTube Link](https://youtu.be/6cn87b28Bnc)
 2. Deploy SLURM by only run `source code`, demonstration of **hpc4you_toolkit solo** 🔗[BV1Gg411R7tt](https://www.bilibili.com/video/BV1Gg411R7tt)
 
 ## Play with Linux
