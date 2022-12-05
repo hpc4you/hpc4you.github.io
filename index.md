@@ -1,8 +1,12 @@
 ## hpc4you_toolkit v3.0
-It is the v2.0 basic version + the Web Interface. The Web Interface is for:
-- User/Group Admin Portal, powered by OpenLDAP. 
-- Resources Admin Portal, powered by ColdFront. 
-- HPC User Portal, powered by Open OnDemand. 
+It is the v2.0 + the Web Interfaces. The Web Interface are for:
+- User/Group Admin Portal, powered by OpenLDAP, --> for HPC Administrator
+- Resources Admin Portal, powered by ColdFront, --> for HPC Administrator
+- HPC User Portal, powered by Open OnDemand, --> for HPC User. You can play with Linux Desktop in the Web. 
+
+In a word, v3.0, focus on HPC via Web. 
+
+[Click for Demo](https://space.bilibili.com/470332016/channel/collectiondetail?sid=891314)🔗. 
 
 ## hpc4you_toolkit v2.0
 The _hpc4you_toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
