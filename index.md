@@ -4,7 +4,7 @@ It is the v2.0 + the Web Interfaces. The Web Interface are for:
 - Resources Admin Portal, powered by ColdFront, --> for HPC Administrator
 - HPC User Portal, powered by Open OnDemand, --> for HPC User. You can play with Linux Desktop in the Web. 
 
-In a word, v3.0, focus on HPC via Web. 
+In a word, v3.0 features parallel computing cluster with web front-end. 
 
 [Click for Demo](https://space.bilibili.com/470332016/channel/collectiondetail?sid=891314)🔗. 
 
