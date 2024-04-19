@@ -16,9 +16,10 @@ No computer skills or Linux knowledge are needed. Only **copy and paste the cmd 
 If you have some knowledge of how parallel computing clusters work, and how to administrate Linux in the cmd line and configure Linux networking, then you can try out the [OpenHPC solution](https://github.com/openhpc/ohpc). 
 
 Currently, the _hpc4you_toolkit_ supports: 
-1. RHEL7, RHEL8, RHEL9 and their compatible operating systems, such as CentOS 7.x, 8.x, RockyLinux 8.x, AlmaLinux 8.x, AlmaLinux 9.x, CentOS Stream 9. 
+1. RHEL7, RHEL8, RHEL9 and their compatible operating systems, such as CentOS 7.x, RockyLinux 8.x, AlmaLinux 8.x, AlmaLinux 9.x, CentOS Stream 9. 
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 3. The maximum number of computing nodes depends on the capacity of your switch.
+4. **No support for CentOS 8.x**. 
 
 ## Quick Start
 1. Get the package. 
