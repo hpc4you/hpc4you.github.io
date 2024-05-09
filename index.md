@@ -1,14 +1,14 @@
-## hpc4you_toolkit v3.0
-It is the v2.0 + the Web Interfaces. The Web Interface are for:
-- User/Group Admin Portal, powered by OpenLDAP, --> for HPC Administrator
-- Resources Admin Portal, powered by ColdFront, --> for HPC Administrator
+## hpc4you_toolkit v3
+It is the `v2 + the Web Interfaces`. The Web Interface are for:
+- User/Group Portal, powered by OpenLDAP, --> for HPC Administrator
+- Resources Portal, powered by ColdFront, --> for HPC Administrator
 - HPC User Portal, powered by Open OnDemand, --> for HPC User. You can play with Linux Desktop in the Web. 
 
-In a word, v3.0 features parallel computing cluster with web front-end. 
+In a word, v3 features parallel computing cluster with web front-end. 
 
 [Click for Demo](https://space.bilibili.com/470332016/channel/collectiondetail?sid=891314)🔗. 
 
-## hpc4you_toolkit v2.0
+## hpc4you_toolkit v2
 The _hpc4you_toolkit_ is a simple but robust toolkit written by a computational chemist to set up a parallel computing cluster for scientific research. 
 
 No computer skills or Linux knowledge are needed. Only **copy and paste the cmd from the screen then press the Enter key**.
@@ -16,16 +16,16 @@ No computer skills or Linux knowledge are needed. Only **copy and paste the cmd 
 If you have some knowledge of how parallel computing clusters work, and how to administrate Linux in the cmd line and configure Linux networking, then you can try out the [OpenHPC solution](https://github.com/openhpc/ohpc). 
 
 Currently, the _hpc4you_toolkit_ supports: 
-1. RHEL7, RHEL8, RHEL9 and their compatible operating systems, such as CentOS 7.x, RockyLinux 8.x, AlmaLinux 8.x, AlmaLinux 9.x, CentOS Stream 9. 
+1. RHEL7, RHEL8, RHEL9 and their compatible operating systems, such as CentOS 7.x, CentOS 8.x, RockyLinux 8.x, AlmaLinux 8.x, AlmaLinux 9.x, CentOS Stream 9. 
 2. Ubuntu 20.04/22.04 and their compatible operating systems. 
 3. The maximum number of computing nodes depends on the capacity of your switch.
-4. **No support for CentOS 8.x**. 
+4. **You should configure a functional repository first**. 
 
 ## Quick Start
 1. Get the package. 
 2. Edit **/etc/hosts** file. 
 3. Upload the package **hpc4you_toolkit-XXX.zip**. 
-4. Unzip, then run `source code`. 
+4. Run the cmd `unzip -qo hpc4you*.zip; source code`. 
 
 All subsequent 5 commands will be automatically displayed in green. 
 
@@ -101,9 +101,9 @@ In this example,
 ## Run hpc4you_toolkit
 Upload the package **hpc4you_toolkit-XXX.zip** to the login node. 
 
-Unzip the package, then open terminal, run: 
+SSh into the login node, run: 
 ```
-source code
+unzip -qo hpc4you*.zip; source code
 ```
 Follow the on-screen prompts carefully. 
 
@@ -131,7 +131,7 @@ It is possible to add new share path by,
 1. Edit **/etc/exports** file on master/login node, 
 2. Use 'setup_hpc --sync_do' to update the **/etc/fstab** file on all slave nodes. 
 
-## User Management
+## User Management | v2
 ### Add user
 On login node, run 
 ```
@@ -161,7 +161,7 @@ userdel_hpc tom
 ````
 in this case, user **tom** is to be deleted. 
 
-## Cluster Management
+## Cluster Management | v2 and v3
 ### Power on
 Power on the master node and all switches first, and then power on all computing nodes. 
 
@@ -171,7 +171,7 @@ On the login/master node, run, `poweroff_hpc`.
 ### Reboot
 On the login/master node, run, `reboot_hpc`.
 
-### Add new node
+### Add new node manually
 1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
 2. Boot the new server with the cloned disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
@@ -186,7 +186,7 @@ On the login/master node, run, `reboot_hpc`.
 2. On login/master node, run `passwd` to change the root password, then run `setup_hpc --sync_user`. 
 3. Disable password login for root user, only key authentication is allowed.
 4. Or use ssh ProxyJump server or even hardware firewall. 
-5. Or run `enhance_security.sh` to apply awesome security hardening configurations automatically. 
+5. Or run `enhance_security.sh` to apply awesome security hardening configurations automatically. (**v2 only**)
 
 ## Usage of setup_hpc
 ### sync file
