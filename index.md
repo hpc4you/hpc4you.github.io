@@ -62,7 +62,7 @@ Remeber to copy and paste the **blue lines** into the body of your Email, please
 ### mini-HPC
 ![mini-HPC](/docs/mini-HPC.jpg)
 
-## Declare Servers
+## Declare Servers | v2
 On the login node, edit file **/etc/hosts**.  
 
 ### Scenario A
@@ -97,6 +97,13 @@ In this example,
 2. **server12**, is the output of `hostname` on the computing node which can be accessed via IP 192.168.1.112. 
 3. The hostname of all compute nodes must be prefixed with **node**, and the the suffix numbers ('0', '1', '2', and '12' in current case) do not have to be consecutive. 
 4. You can use `nmtui` to set hostname and configure the IP address. 
+
+## Declare Servers | v3
+In v3, the default hostname still follows the `master/nodeXX` pattern. 
+You'd better follow this nomenclature. 
+
+It is possible to customize the machine name using the methods described above. 
+After customizing the hostname, you may need to refer to the Open OnDemand manual (https://osc.github.io/ood-documentation/release-3.0/index.html) to make the necessary configuration changes.
 
 ## Run hpc4you_toolkit
 Upload the package **hpc4you_toolkit-XXX.zip** to the login node. 
@@ -171,7 +178,9 @@ On the login/master node, run, `poweroff_hpc`.
 ### Reboot
 On the login/master node, run, `reboot_hpc`.
 
-### Add new node manually
+### Add new node 
+There are two approaches available. 
+#### Approach A | manually
 1. Clone the OS disk of any compute node. Use this hardware tool, [Offline Cloning Tool](https://item.jd.com/100014988528.html). 
 2. Boot the new server with the cloned disk, modify hostname and configure network with command `nmtui`. 
 3. Add the IP and hostname of the new server to **/etc/hosts** on the master/login node. 
@@ -179,7 +188,14 @@ On the login/master node, run, `reboot_hpc`.
 5. On the new server, run `slurmd ‐C | head -n 1`, please copy the output. 
 6. On the master/login node, paste the coppied contents into last line of file **/etc/slurm/slurm.conf**. 
 7. On the master/login node, run `setup_hpc ‐‐sync_do 'systemctl restart slurmd'; systemctl restart slurmctld`. 
-8. Done. 
+8. Done.
+
+#### Approach B | automatically
+1. Install the OS for the new node.
+2. Configure the network.
+3. On the master/login node, run `addNewComputeNode.sh`.
+4. You will be promoted to enter the IP address and root password for the new machine, and give the new machine a name in the format nodeXX.
+5. Wait...Done.
 
 ## Better Security
 1. Disable internet connection on all slave/computing nodes. 
